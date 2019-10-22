@@ -1,0 +1,64 @@
+form{
+    display:flex;
+    flex-flow: column;
+    left:50px;
+}
+input{
+    background-color:#eeeeee;
+    border: 2px solid #bbbbbb;
+    border-radius: 4px;
+  
+    width:340px;
+    height: 40px;
+    border: 1px solid black circle;
+    padding: 5px;
+
+
+}
+
+input[type=submit]{
+    width:15%;
+    height: 55px;
+    font-size: 40px;
+    border: 1px solid black circle;
+    padding: 5px;
+    margin :5px;
+    font-family:'Merriweather', serif;
+    background-color:#f44336;
+
+
+
+
+
+}
+input[type=submit]:hover{
+   
+    font-family:'Merriweather', serif;
+   
+    opacity:0.8;
+
+}
+select{
+    width:353px;
+    height: 44px;
+    border: 1px solid black circle;
+    padding: 5px;
+
+}
+textarea {
+    display: flex;
+    width:80%;
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    border: 1px solid black circle;
+    padding: 5px;
+
+    resize: none;
+}
+section{
+    margin: 10px;
+}

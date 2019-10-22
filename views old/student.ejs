@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Complaint Register </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style1.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+        <script src="main.js"></script>
+</head>
+<body>
+        <header>
+                <div class="container">
+                  <div id="branding">
+                    <h1><span class="highlight">Complaint </span>Register</h1>
+                  </div>
+                  <nav>
+                    <ul>
+                      <li ><a href="/">Home</a></li>
+                      <li class="current"><a href="/student">User</a></li>
+                      <li><a href="/admin">Admin</a></li>
+                      <li><a href="/dash">Dashboard</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </header>
+              
+    <section>  
+        <h1>Complaint Form</h1>        
+            <form action="/student" method="POST">
+                <div>
+                    <input type="text" name="firstname" placeholder="First Name">
+                    <input type="text" name="lastname" placeholder="Last Name">
+                </div>
+                <div>
+                        <input type="text" name="roll" placeholder="Roll No.">
+                </div>
+                <div>
+                        <input type="text" name="email" placeholder="Email">
+                </div>
+                <div>
+                  <input type="text" name="phone" placeholder="Contact">
+                 </div>
+                <div>
+                
+                <select name="hname">
+                    <!-- hostel daal lena -->
+                    <option value="himgiri">Himgiri Boys Hostel</option>
+                    <option value="himadri">Himadri Boys Hostel</option>
+                    <option value="kailash">Kailash Boys Hostel</option>
+                    <option value="neelkanth">Neelkanth Boys Hostel</option>
+                    <option value="manimahesh">Manimahesh Boys Hostel</option>
+                    <option value="vindhyachal">Vindhyachal Boys Hostel</option>
+                    <option value="dhauladhar">Dhaluladhar Boys Hostel</option>
+                    <option value="ambika">Ambika Girls Hostel</option>
+                    <option value="parvati">Parvati Girls Hostel</option>
+                </select>
+                </div>
+                <div>
+                    <input type="text" name="room" placeholder="Room No."></input>
+                </div>
+                    <div>
+                        <h2>Complaint Box</h2>
+                        <div class="box">
+                        <textarea name="comp" >
+                            
+                        </textarea>
+                    </div>
+                </div>
+                <div class="Button">
+                <input type="submit">
+                </div>
+
+            </form>
+        </div>  
+  </section>
+    
+</body>
+</html>

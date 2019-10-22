@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+        .w3-btn {margin-bottom:10px;}
+        </style>
+<body>
+<h1>YOUR COMPLAINT STATUS</h1>
+<% if(data.length == 0){ %>
+    <h1>No Complaint</h1>
+  <% } else{ %>  
+        
+
+                <h2>All Complaints</h2>
+                <% for(var i=0; i < data.length; i++) { %>
+                    <div class="w3-container"> 
+                <div class="w3-panel w3-card">
+                    <p><%= data[i].firstname %> <%= data[i].lastname %></p>
+                    <p>Complaint : <%= data[i].comp %></p>
+                    <% if(data[i].status == false){ %>
+                        <p><button id='<%= data[i].comp %>' onclick="myFunction(id)" class="w3-button w3-white w3-border">Complint Solved</button></p>
+                           
+                        <% } else{ %>
+                            <p>Status : Complaint Solved</p>
+                            <% } %>
+                </div>
+              </div>
+        <% } %>
+ <% } %>
+ <script>        
+        function myFunction(id) {
+          document.getElementById(id).innerHTML = "Thank You";
+        }
+        </script>
+
+
+</body>
+</html>

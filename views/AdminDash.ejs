@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+  body{
+    position: relative;
+    width: cover;
+    }
+    .dashboard{
+      position: absolute;
+      top: 120px;
+      width: 100%;
+      height: auto;
+      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:white;
+    }
+    .heading{
+      text-align: center;
+    }
+    .listOfInput{
+      width: 90%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+    }
+    .complaintsCaption{
+      width: 95%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border: 2px solid black;
+      margin: 1% auto;
+      box-shadow: 2px 2px 4px grey;
+      
+    }
+    .complaints{
+      width:auto;
+      height:auto;
+      max-height: 140px;
+      transition: .7s;
+      margin:0% auto;
+      padding: 5px;
+      transition: max-height .5s; 
+      color: black;
+      overflow:hidden;
+    }
+    .captionArrow{
+      width: 100%;
+      height: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border-top: 1px solid black;
+    }
+  .complaintsAdd{
+    transition: max-height 3s; 
+      max-height: 2000px;
+    }
+    .Arrow{
+      cursor: pointer;
+    }
+    .Rs{
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border-top: 1px solid black;
+    }
+    .status{
+      width: 50%;
+      height: 100%;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 25px;
+      border-right: 1px solid black;
+    }
+    .Solve{
+      width: 60%;
+      height: 80%;
+      background: black;
+      color: white;
+      border:1px solid white;
+      margin: 0px auto;
+      font-size: 25px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2 class="heading">YOUR COMPLAINT STATUS</h2>
+    <div class="listOfInput">
+    <!--  <% if(data.length == 0){ %> -->
+    <h1  style="text-align:center;">No Complaint</h1>
+   <!-- <% } else { %>   -->
+      <h1 style="text-align:center;">All Complaints</h1>
+       <!-- <% for(var i=0; i< data.length; i++) {%> -->
+      <div class="complaintsCaption">
+      <div class="complaints">
+      <p>Complaint : <%= data[i].comp %></p>
+      </div>
+        <div class="captionArrow">
+        <i class="fa fa-angle-down Arrow" style="font-size:27px;color:black" text-shadow: 1px 1px 3px grey;></i>
+              </div>
+              <div class="Rs">
+              <p class="status">
+       <%= data[i].firstname %> <%= data[i].lastname %>
+       </p>
+    <!--    <% if(data[i].status == false){ %> -->
+  
+              <form action="/admin/<%= data[i]._id %>" method="POST" class="status">
+              <button class ="Solve" id='<%= data[i]._id %>' onclick="myFunction(id)">Complint Solved</button>
+               </form>
+              <!-- <% } else{ %> -->
+                    <p class="status" >Status : Complaint Solved</p>
+                     <!--  <% } %> -->
+      </div>
+      </div>
+      </div>
+     <!--    <% } %>
+        <% } %> -->
+
+  </div>
+  <script>
+    const ArrowArray = document.querySelectorAll(".Arrow")
+    const ComplaintsBox = document.querySelectorAll(".complaints")
+    ArrowArray.forEach((Arrow)=>{
+    Arrow.addEventListener("click",()=>{
+    Arrow.parentNode.parentNode.children[0].classList.toggle("complaintsAdd");
+    Arrow.classList.toggle("fa-angle-up");
+    Arrow.classList.toggle("fa-angle-down");
+  });
+})
+
+
+  </script>
+</body>
+</html>

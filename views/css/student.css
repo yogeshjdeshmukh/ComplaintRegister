@@ -1,0 +1,70 @@
+.main div h1 {
+  text-align: center;
+}
+
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+.form-box {
+  border: 2px solid #444;
+  margin: 100px 24% 10px 24%;
+}
+
+input {
+  background-color: #eeeeee;
+  border: 2px solid #bbbbbb;
+  border-radius: 4px;
+  width: 100%;
+  height: 55px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.double-input {
+  display: flex;
+  justify-content: space-between;
+}
+.double {
+  width: 49%;
+}
+
+.Button {
+  text-align: center;
+  margin-bottom: 10px;
+}
+input[type="submit"] {
+  width: 200px;
+  height: 55px;
+  font-size: 1.5em;
+  color: #eeeeee;
+  font-family: "Merriweather", serif;
+  background-color: #e8491d;
+}
+input[type="submit"]:hover {
+  opacity: 0.7;
+}
+select {
+  height: 55px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+}
+textarea {
+  background-color: #eeeeee;
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+
+  resize: none;
+}
+section {
+  margin: 10px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>Current Complaints</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<link rel="stylesheet" type="text/css" href="css/Dashboard.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<script src="main.js"></script>
+<style>
+  .w3-btn {
+    margin-bottom: 10px;
+  }
+</style>
+
+<body>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight">Complaint </span>Register</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/student">User</a></li>
+          <li class="current"><a href="/admin">Admin</a></li>
+          <li><a href="/dash">Dashboard</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <h1 class="w3-container">CURRENT COMPLAINT STATUS</h1>
+  <% if(data.length == 0){ %>
+  <h1 class="w3-container">No Complaint</h1>
+  <% } else{ %>
+
+
+  <h2 class="w3-container">All Complaints</h2>
+  <% for(var i=0; i < data.length; i++) { %>
+  <div class="w3-container">
+    <div class="w3-panel w3-card">
+      <p>Name: <%= data[i].firstname %> <%= data[i].lastname %></p>
+      <p>Roll Number: <%= data[i].roll %></p>
+      <p>Contact: <%= data[i].phone %></p>
+      <p>Email: <%= data[i].email %></p>
+      <p>Room: <%= data[i].room %> <%= data[i].hname %></p>
+      <p>Complaint : <%= data[i].comp %></p>
+      <p>Date Posted : <%= data[i].date %></p>
+      <% if(data[i].status == false){ %>
+      <form action="/admin/<%= data[i]._id %>" method="POST">
+        <p><button id='<%= data[i]._id %>' onclick="return myFunction(id);" class="w3-button w3-white w3-border">Click
+            if solved</button></p>
+      </form>
+      <% } else{ %>
+      <p>Status : Complaint Solved</p>
+      <% } %>
+    </div>
+  </div>
+  <% } %>
+  <% } %>
+  <script>
+    function myFunction(id) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            
+            // document.getElementById("demo").innerHTML = this.responseText;
+            document.getElementById(id).innerHTML = "Thank You";
+          }
+        };
+        xhttp.open("POST", `/admin/${id}`, true);
+        xhttp.send();
+      return false;
+    }
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: #ccc;
+  background-image: url("./hostel.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main {
+  
+  display: flex;
+  margin :0 auto;
+  flex-flow: column;
+  width: 400px;
+  border: black 2px solid;
+  height: 530px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 20px 20px 20px;
+  background-color: #ccc;
+
+}
+h2 {
+  text-align: left;
+  padding: 0px 0px 0px 15px;
+  color: #000;
+}
+input[type="submit"]:hover {
+  font-family: "Merriweather", serif;
+
+  opacity: 0.8;
+}
+.text {
+  margin: 20px;
+  margin-left: -10px;
+  font-size: 60px;
+}
+input {
+  font-family: "Merriweather", serif;
+  width: 340px;
+  height: 40px;
+  border: 1px solid black circle;
+  padding: 5px;
+}
+
+.submit {
+  margin-top: 25px;
+  font-size: 25px;
+  height: 45px;
+  width: 350px;
+  color: #ffffff;
+  background-color: #f44336;
+  border-color: #f44336;
+}

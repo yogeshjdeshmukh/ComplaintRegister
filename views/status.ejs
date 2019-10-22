@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>Complaint Status</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/Dashboard.css" />
+    <script src="main.js"></script>
+<body>
+        <header>
+                <div class="container">
+                  <div id="branding">
+                    <h1><span class="highlight">Complaint </span>Register</h1>
+                  </div>
+                  <nav>
+                    <ul>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/student">User</a></li>
+                      <li><a href="/admin">Admin</a></li>
+                      <li class="current"><a href="/dash">Dashboard</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </header>
+<h1 class="w3-container">YOUR COMPLAINT STATUS</h1>
+<% if(data.length == 0){ %>
+    <h1 class="w3-container">No Complaint</h1>
+  <% } else{ %>  
+        
+
+                <h2 class="w3-container">All Complaints</h2>
+                <% for(var i=0; i < data.length; i++) { %>
+                    <div class="w3-container"> 
+                <div class="w3-panel w3-card">
+                    <p><%= data[i].firstname %> <%= data[i].lastname %></p>
+                    <p>Complaint : <%= data[i].comp %></p>
+                    <p>Date Posted : <%= data[i].date %></p>
+                    <% if(data[i].status == false){ %>
+                        <p>Status : Complaint Pending</p>
+                        <% } else{ %>
+                            <p>Status : Complaint Solved</p>
+                            <% } %>
+                </div>
+              </div>
+        <% } %>
+ <% } %>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Complaint Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/student.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Complaint </span>Register</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li class="current"><a href="/student">User</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/dash">Dashboard</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="main">
+      <div class="form-box">
+        <div>
+          <h1 style="font-size:4em; ">Complaint Form</h1>
+          <h1 style="font-size:4em; ">Welcome <%= user.firstname %></h1>
+        </div>
+        <form action="/complaint/<%= user._id %>" method="POST">
+         <!-- <div class="double-input form-row">
+            <input type="text" placeholder="First Name" name="firstname" class="double" required />
+            <input type="text" placeholder="Last Name" name="lastname" class="double" required/>
+          </div>
+           <div class="form-row">
+            <input type="text" placeholder="Roll No." name="roll" class="single" />
+          </div> 
+          <div class="form-row">
+            <input type="email" placeholder="Email" name="email" class="single"required />
+          </div>
+          <div class="form-row">
+            <input type="tel" pattern="[0-9]{10}" placeholder="Contact" name="phone" class="single" min="10" max="" required/>
+          </div>
+          -->
+          <div class="double-input form-row">
+            <select name="hname" class="double" >
+              <!-- hostel daal lena -->
+              
+              <option value="himgiri">Himgiri Boys Hostel</option>
+                    <option value="himadri">Himadri Boys Hostel</option>
+                    <option value="kailash">Kailash Boys Hostel</option>
+                    <option value="neelkanth">Neelkanth Boys Hostel</option>
+                    <option value="manimahesh">Manimahesh Boys Hostel</option>
+                    <option value="vindhyachal">Vindhyachal Boys Hostel</option>
+                    <option value="dhauladhar">Dhaluladhar Boys Hostel</option>
+                    <option value="ambika">Ambika Girls Hostel</option>
+                    <option value="parvati">Parvati Girls Hostel</option>
+            </select>
+
+            <input type="text" placeholder="Room No." name="room" class="double" required/>
+          </div>
+
+          <div class="form-row">
+            <textarea 
+              rows="8"
+              name="comp"
+              placeholder="Write your complaint here .... " required></textarea>
+          </div>
+          <div class="Button">
+            <input type="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
